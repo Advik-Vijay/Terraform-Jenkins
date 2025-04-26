@@ -46,7 +46,7 @@ resource "aws_route_table" "pvt_rt" {
 
   route {
     cidr_block = "10.0.2.0/24"
-    nat_gateway_id = aws_nat_gateway.nat-gw
+    nat_gateway_id = aws_nat_gateway.nat-gw.id
   }
   tags = {
     Name = "pvt_rt"
