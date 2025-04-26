@@ -74,7 +74,7 @@ resource "aws_nat_gateway" "nat-gw" {
 
 #Elastic IP
 resource "aws_eip" "my_eip" {
-  vpc      = true
+  domain = vpc
 }
 
 #Route Table Association
