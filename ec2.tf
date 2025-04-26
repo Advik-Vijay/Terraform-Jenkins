@@ -1,6 +1,6 @@
 #Ec2 Instance in Public Subnet
 resource "aws_instance" "vijay-ec2" {
-  ami                         = "ami-06b6e5225d1db5f46"
+  ami                         = "ami-0f9de6e2d2f067fca"
   instance_type               = "t2.micro"
   key_name                    = "Terraform"
   associate_public_ip_address = true
@@ -33,7 +33,3 @@ provisioner "remote-exec" {
   ]
 }
 }
-
-
-
-
