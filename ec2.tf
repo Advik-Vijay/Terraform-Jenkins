@@ -6,7 +6,7 @@ resource "aws_instance" "vijay-ec2" {
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public_subnet.id
   vpc_security_group_ids      = [aws_security_group.my-sg.id]
-  user_data                   = filebase64("./apache-install.sh")
+  user_data                   = file("./apache-install.sh")
   tags = {
     Name = "vijay-ec2"
   }
@@ -15,7 +15,7 @@ resource "aws_instance" "vijay-ec2" {
   connection {
     type        = "ssh"
     host        = self.public_ip
-    user        = "ec2-user"
+    user        = "ubuntu"
     password    = ""
     private_key = file("./private-key/Terraform.pem")
   }
