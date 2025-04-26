@@ -1,11 +1,13 @@
 #Terraform Block
 terraform {
   required_providers {
-    source = "hashicorp/aws"
-    version = "4.23.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"  # This is the critical fix - specifies version 5.x
+    }
   }
-    backend "s3" {
-    bucket = "greens-workshop-april19"
+      backend "s3" {
+    bucket = "terraform-jenkins-260425"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"
   }  
